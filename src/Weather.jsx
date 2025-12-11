@@ -1,5 +1,13 @@
 import axios from "axios"
 import { useState } from "react"
+import weatherImg from "./clear-sky.avif"
+import sunnyImg from "./sunny.avif"
+import rainImg from "./jason-leung-neu_ObiyyMg-unsplash.jpg"
+import mistImg from "./mist.avif"
+import cloudsImg from "./cludy.avif"
+import hazeImg from "./haze.jpg"
+import snowImg from "./snow.avif"
+import stormImg from "./storm.jpg"
 
 
 function Weather() {
@@ -8,6 +16,19 @@ function Weather() {
     const [temperature, settemperature] = useState("")
     const [description, setdescription] = useState()
     const [error, seterror] = useState("")
+
+    const getBackgroundImage = () => {
+        const w = weather.toLowerCase();
+
+        if (w === "clear") return sunnyImg;
+        if (w === "rain") return rainImg;
+        if (w === "clouds") return cloudsImg;
+        if (w === "mist") return mistImg;
+        if (w === "haze") return hazeImg;
+        if (w === "snow") return snowImg;
+        if (w === "thunderstorm") return stormImg;
+        return weatherImg; // default background
+    };
 
     function handleCity(event) {
         setCity(event.target.value)
@@ -28,23 +49,47 @@ function Weather() {
                 setdescription("")
             })
     }
-    return (<div className="bg-yellow-200 border border-black rounded-2xl m-5 p-10">
-        <div className="bg-blue-200 p-10 border border-black shadow-xl rounded-lg">
-            <h1 className="text-2xl font-medium">Weather Report</h1>
-            <p>I can give you a weather report of your city !</p>
-            <input onChange={handleCity} type="text" placeholder="Enter your City name" className="mt-2 border border-black  rounded-md p-1"></input><br />
-            <button onClick={getWeather} className="bg-black text-white p-1 mt-2 border rounded-md">Get Report</button>
-            {error && <p className="text-red-600 font-semibold mt-2">{error}</p>}
-            
-            <div>
+    return (
+
+        <div className="rounded-2xl text-white  min-h-screen bg-cover bg-center relative" style={{ backgroundImage: `url(${getBackgroundImage()})`, transition: "background-image 0.5s ease-in-out", filter: "brightness(0.85)" }}>
+            <div className="absolute inset-0 z-10 bg-black/0">
+                <div className=" p-10 text-center relative z-20 ">
+                    <h1 className="text-4xl md:text-7xl text-center font-medium relative top-2">Weather Report</h1>
+                    <p className="text-2xl md:text-5xl relative top-7">I can give you a weather report of your city !</p>
+                    <div className="flex flex-col items-center justify-center relative top-11">
+                        <input onChange={handleCity} type="text" placeholder="Enter your City name" className="mt-10 text-2xl text-white p-4 w-60 border bg-transparent border-black  rounded-md font-bold"></input><br />
+                        <button onClick={getWeather} className="bg-black w-60 text-white p-1 mt-2 border rounded-md">Get Report</button>
+                    </div>
+
+                    {error && 
+                        (<p className="text-red-700 z-30  text-2xl mt-11 relative font-bold">{error}</p>)}
+                        {!error && (
+                             <div className="relative flex flex-col  md:flex-row mt-20 gap-10 justify-between">
+
+                                <div className="text-white p-8  rounded-lg">
+                                    <h1><b className=" text-bold text-5xl md:text-7xl">Weather</b></h1>
+                                    <h2 className="text-2xl font-bold md:text-4xl">{weather}</h2>
+                                </div>
+                                <div className="text-white gap-10 p-8 rounded-lg">
+                                    <h1><b className=" text-bold text-5xl md:text-7xl">Temperature</b></h1>
+                                    <h2 className="text-2xl font-bold md:text-4xl">{temperature} </h2>
+                                </div>
+                                <div className="text-white  p-8 rounded-lg">
+                                    <h1><b className=" text-bold text-5xl md:text-7xl">Description</b></h1>
+                                    <h2 className="text-2xl font-bold md:text-4xl">{description}</h2>
+                                </div>
 
 
-                <h1><b>Weather:</b>{weather}</h1>
-                <h1><b>Temperature:</b>{temperature}</h1>
-                <h1><b>Description:</b>{description}</h1>
+                            </div>
+                        )}
+
+ 
+                </div>
             </div>
         </div>
 
-    </div>)
+
+    )
 }
+        
 export default Weather
