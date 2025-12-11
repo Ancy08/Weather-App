@@ -57,7 +57,7 @@ function Weather() {
                     <h1 className="text-4xl md:text-7xl text-center font-medium relative top-2">Weather Report</h1>
                     <p className="text-2xl md:text-5xl relative top-7">I can give you a weather report of your city !</p>
                     <div className="flex flex-col items-center justify-center relative top-11">
-                        <input onChange={handleCity} type="text" placeholder="Enter your City name" className="mt-10 text-2xl text-white p-4 w-60 border bg-transparent border-black  rounded-md font-bold"></input><br />
+                        <input onChange={handleCity} type="text" placeholder="Enter your City name" className="mt-10 text-xl text-white p-4 w-60 border bg-transparent border-black  rounded-md font-bold"></input><br />
                         <button onClick={getWeather} className="bg-black w-60 text-white p-1 mt-2 border rounded-md">Get Report</button>
                     </div>
 
