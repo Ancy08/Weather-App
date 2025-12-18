@@ -51,8 +51,8 @@ function Weather() {
     }
     return (
 
-        <div className="rounded-2xl text-white min-h-screen bg-cover bg-center relative" style={{ backgroundImage: `url(${getBackgroundImage()})`, transition: "background-image 0.5s ease-in-out", filter: "brightness(0.85)" }}>
-            <div className="absolute inset-0 z-10 bg-black/0">
+        <div className="text-white min-h-screen bg-cover bg-center relative" style={{ backgroundImage: `url(${getBackgroundImage()})`, transition: "background-image 0.5s ease-in-out", filter: "brightness(0.85)" }}>
+            <div className="absolute inset-0 z-10 bg-black/0 min-h-screen">
                 <div className=" p-10 text-center relative z-20">
                     <h1 className="text-4xl md:text-7xl text-center font-medium relative top-2">Weather Report</h1>
                     <p className="text-2xl md:text-5xl relative top-7">I can give you a weather report of your city !</p>
