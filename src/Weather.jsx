@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-import weatherImg from "./clear-sky.avif"
+import weatherImg from "./sunny.avif"
 import sunnyImg from "./sunny.avif"
 import rainImg from "./jason-leung-neu_ObiyyMg-unsplash.jpg"
 import mistImg from "./mist.avif"
