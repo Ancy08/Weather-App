@@ -52,7 +52,7 @@ function Weather() {
     return (
 
  <div
-    className="relative w-full h-[100svh] bg-cover bg-center text-white"
+    className="relative w-full min-h-[100svh] bg-cover bg-center text-white"
     style={{
       backgroundImage: `url(${getBackgroundImage()})`,
       transition: "background-image 0.5s ease-in-out"
