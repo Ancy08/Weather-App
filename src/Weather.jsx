@@ -63,7 +63,7 @@ function Weather() {
                     {error && 
                         (<p className="text-red-700 z-30  text-2xl mt-11 relative font-bold">{error}</p>)}
                         {!error && (
-                             <div className="relative flex flex-col  md:flex-row mt-20 gap-10 justify-between">
+                             <div className="flex flex-col  md:flex-row mt-16 gap-10 ">
 
                                 <div className="text-white p-8  rounded-lg">
                                     <h1><b className=" text-bold text-5xl md:text-7xl">Weather</b></h1>
