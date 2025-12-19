@@ -51,42 +51,68 @@ function Weather() {
     }
     return (
 
-        <div className="text-white h-[100svh] w-full bg-cover bg-center relative" style={{ backgroundImage: `url(${getBackgroundImage()})`, transition: "background-image 0.5s ease-in-out" }}>
-            <div className="absolute inset-0 z-10 bg-black/40"></div>
-                <div className="md:px-10 text-center h-full px-4 flex flex-col items-center relative z-10">
-                    <h1 className="text-4xl md:text-7xl text-center font-medium relative top-2">Weather Report</h1>
-                    <p className="text-2xl md:text-5xl relative top-7">I can give you a weather report of your city !</p>
-                    <div className="flex items-center justify-center relative gap-5 mt-10">
-                        <input onChange={handleCity} type="text" placeholder="Enter your City name" className="mt-10 text-xl text-white p-4 w-60 border bg-transparent border-black  rounded-md font-bold"></input><br />
-                        <button onClick={getWeather} className="bg-black w-60 text-white p-4 mt-10 border border-black rounded-md text-xl">Get Report</button>
-                    </div>
-                    {error && 
-                        (<p className="text-red-700 z-30  text-2xl mt-11 relative font-bold">{error}</p>)}
-                        {!error && (
-                             <div className="flex flex-col  md:flex-row mt-16 gap-10 ">
+ <div
+    className="relative w-full h-[100svh] bg-cover bg-center text-white"
+    style={{
+      backgroundImage: `url(${getBackgroundImage()})`,
+      transition: "background-image 0.5s ease-in-out"
+    }}
+  >
+    {/* dark overlay */}
+    <div className="absolute inset-0 bg-black/40"></div>
 
-                                <div className="text-white p-8  rounded-lg">
-                                    <h1><b className=" text-bold text-5xl md:text-7xl">Weather</b></h1>
-                                    <h2 className="text-2xl font-bold md:text-4xl">{weather}</h2>
-                                </div>
-                                <div className="text-white gap-10 p-8 rounded-lg">
-                                    <h1><b className=" text-bold text-5xl md:text-7xl">Temperature</b></h1>
-                                    <h2 className="text-2xl font-bold md:text-4xl">{temperature} </h2>
-                                </div>
-                                <div className="text-white  p-8 rounded-lg">
-                                    <h1><b className=" text-bold text-5xl md:text-7xl">Description</b></h1>
-                                    <h2 className="text-2xl font-bold md:text-4xl">{description}</h2>
-                                </div>
+    {/* content */}
+    <div className="relative z-10 h-full px-4 md:px-10 flex flex-col items-center text-center">
+      
+      <h1 className="text-4xl md:text-7xl font-medium mt-10">
+        Weather Report
+      </h1>
 
+      <p className="text-xl md:text-5xl mt-6">
+        I can give you a weather report of your city!
+      </p>
 
-                            </div>
-                        )}
+      <div className="flex flex-col md:flex-row gap-5 mt-10">
+        <input
+          onChange={handleCity}
+          type="text"
+          placeholder="Enter your City name"
+          className="text-xl text-white p-4 w-64 bg-transparent border border-white rounded-md"
+        />
+        <button
+          onClick={getWeather}
+          className="bg-black text-white p-4 w-64 rounded-md text-xl"
+        >
+          Get Report
+        </button>
+      </div>
 
- 
-                </div>
-            
+      {error && (
+        <p className="text-red-500 text-2xl mt-8 font-bold">
+          {error}
+        </p>
+      )}
+
+      {!error && (
+        <div className="flex flex-col md:flex-row gap-10 mt-16">
+          <div>
+            <h1 className="text-5xl md:text-7xl font-bold">Weather</h1>
+            <h2 className="text-2xl md:text-4xl">{weather}</h2>
+          </div>
+
+          <div>
+            <h1 className="text-5xl md:text-7xl font-bold">Temperature</h1>
+            <h2 className="text-2xl md:text-4xl">{temperature}</h2>
+          </div>
+
+          <div>
+            <h1 className="text-5xl md:text-7xl font-bold">Description</h1>
+            <h2 className="text-2xl md:text-4xl">{description}</h2>
+          </div>
         </div>
-
+      )}
+    </div>
+  </div>
 
     )
 }
