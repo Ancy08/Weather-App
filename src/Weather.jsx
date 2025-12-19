@@ -51,12 +51,12 @@ function Weather() {
     }
     return (
 
-        <div className="text-white h-[100svh] w-full bg-cover bg-center relative" style={{ backgroundImage: `url(${getBackgroundImage()})`, transition: "background-image 0.5s ease-in-out", filter: "brightness(0.85)" }}>
-            <div className="absolute inset-0 z-10 bg-black/40">
-                <div className=" p-10 text-center relative z-20">
+        <div className="text-white h-[100svh] w-full bg-cover bg-center relative" style={{ backgroundImage: `url(${getBackgroundImage()})`, transition: "background-image 0.5s ease-in-out" }}>
+            <div className="absolute inset-0 z-10 bg-black/40"></div>
+                <div className="md:px-10 text-center h-full px-4 flex flex-col items-center relative z-10">
                     <h1 className="text-4xl md:text-7xl text-center font-medium relative top-2">Weather Report</h1>
                     <p className="text-2xl md:text-5xl relative top-7">I can give you a weather report of your city !</p>
-                    <div className="flex items-center justify-center relative gap-5 top-11">
+                    <div className="flex items-center justify-center relative gap-5 mt-10">
                         <input onChange={handleCity} type="text" placeholder="Enter your City name" className="mt-10 text-xl text-white p-4 w-60 border bg-transparent border-black  rounded-md font-bold"></input><br />
                         <button onClick={getWeather} className="bg-black w-60 text-white p-4 mt-10 border border-black rounded-md text-xl">Get Report</button>
                     </div>
@@ -84,7 +84,7 @@ function Weather() {
 
  
                 </div>
-            </div>
+            
         </div>
 
 
