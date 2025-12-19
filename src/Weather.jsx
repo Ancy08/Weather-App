@@ -53,7 +53,7 @@ function Weather() {
     return (
 
  <div
-    className="relative w-full min-h-[100svh] bg-cover bg-center text-white"
+    className="relative w-full min-h-screen bg-cover bg-center text-white"
     style={{
       backgroundImage: `url(${getBackgroundImage()})`,
       transition: "background-image 0.5s ease-in-out"
@@ -63,9 +63,9 @@ function Weather() {
     <div className="absolute inset-0 bg-black/40"></div>
 
     
-    <div className="relative z-10 h-full px-4 md:px-10 flex flex-col items-center text-center">
+    <div className="relative z-10 px-4 md:px-10 flex flex-col items-center text-center">
       
-      <h1 className="text-4xl md:text-7xl font-medium mt-10">
+      <h1 className="text-4xl md:text-7xl font-medium mt-10 leading-tight">
         Weather Report
       </h1>
 
@@ -97,17 +97,17 @@ function Weather() {
       {!error && (
         <div className="flex flex-col md:flex-row gap-10 mt-16">
           <div>
-            <h1 className="text-5xl md:text-7xl font-bold">Weather</h1>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">Weather</h1>
             <h2 className="text-2xl md:text-4xl">{weather}</h2>
           </div>
 
           <div>
-            <h1 className="text-5xl md:text-7xl font-bold">Temperature</h1>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">Temperature</h1>
             <h2 className="text-2xl md:text-4xl">{temperature}</h2>
           </div>
 
           <div>
-            <h1 className="text-5xl md:text-7xl font-bold">Description</h1>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">Description</h1>
             <h2 className="text-2xl md:text-4xl">{description}</h2>
           </div>
         </div>
