@@ -10,6 +10,7 @@ import snowImg from "./snow.avif"
 import stormImg from "./storm.jpg"
 
 
+
 function Weather() {
     const [city, setCity] = useState("")
     const [weather, setweather] = useState("")
@@ -62,7 +63,7 @@ function Weather() {
     <div className="absolute inset-0 bg-black/40"></div>
 
     
-    <div className="z-10 h-full px-4 md:px-10 flex flex-col items-center text-center">
+    <div className="relative z-10 h-full px-4 md:px-10 flex flex-col items-center text-center">
       
       <h1 className="text-4xl md:text-7xl font-medium mt-10">
         Weather Report
