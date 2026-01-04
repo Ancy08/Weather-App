@@ -143,15 +143,15 @@ function Weather() {
         )}
 
         {!error && (
-          <div className="flex flex-col md:flex-row gap-10 mt-16 p-5">
+          <div className="flex flex-col md:flex-row gap-6 mt-10 p-3">
             <div>
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight">Weather</h1>
+              <h1 className="text-3xl md:text-7xl font-bold">Weather</h1>
               <h2 className="text-lg md:text-4xl italic mt-3 opacity-90">{weather}</h2>
             </div>
 
             <div>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">Temperature</h1>
-              <h2 className="text-6xl md:text-8xl font-extrabold tracking-tight">{unit === "C" ? `${kelvinToCelsius(temperature)}°C` : `${kelvinToFahrenheit(temperature)}°F`}</h2>
+              <h2 className="text-4xl md:text-8xl font-extrabold">{unit === "C" ? `${kelvinToCelsius(temperature)}°C` : `${kelvinToFahrenheit(temperature)}°F`}</h2>
               <div className="flex gap-3 justify-center mt-4">
                 <button onClick={() => setUnit("C")}
                   className={`px-3 py-1 rounded ${unit === "C" ? "bg-white text-black" : "bg-black text-white"
@@ -168,7 +168,7 @@ function Weather() {
 
             <div>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">Description</h1>
-              <h2 className="text-lg md:text-4xl italic opacity-80 mt-3">{description}</h2>
+              <h2 className="text-base md:text-4xl italic opacity-80 mt-3">{description}</h2>
             </div>
           </div>
         )}
