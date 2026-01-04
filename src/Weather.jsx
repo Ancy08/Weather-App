@@ -113,7 +113,7 @@ function Weather() {
             onChange={(e) => setSearch(e.target.value)}
             type="text"
             placeholder="Search city"
-            className="text-xl text-white p-4 w-64 bg-transparent border border-white rounded-md"
+            className="text-xl hidden md:block text-white p-4 w-64 bg-transparent border border-white rounded-md"
           />
           {/* Dropdown */}
           <select
