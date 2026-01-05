@@ -18,7 +18,7 @@ function Weather() {
   const [description, setdescription] = useState()
   const [error, seterror] = useState("")
   const [unit, setUnit] = useState("C")
-  const [search, setSearch] = useState("");
+ 
 
   const getBackgroundImage = () => {
     const w = weather.toLowerCase();
@@ -108,14 +108,7 @@ function Weather() {
         </p>
 
         <div className="flex flex-col md:flex-row gap-5 mt-10">
-          {/* Search input */}
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            type="text"
-            placeholder="Search city"
-            className="text-xl hidden md:block text-white p-4 w-64 bg-transparent border border-white rounded-md"
-          />
+          
           {/* Dropdown */}
           <select
             value={city}
